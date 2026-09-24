@@ -38,11 +38,15 @@ main {
    reel appears inside its counter, then scales back down when done. */
 .letter-o {
   position: relative;
-  transition: font-size 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: font-size 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+              font-weight 0.45s ease;
 }
 
 .letter-o.grown {
   font-size: 2.88em;
+  /* Scaling the glyph up scales its stroke weight with it, which reads
+     too heavy next to the other letters — thin it out to compensate. */
+  font-weight: 400;
 }
 
 .reel {
