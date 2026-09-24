@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5e5e5;
+}
+
+main {
+  display: flex;
+}
+
+/* A pill-shaped track that grows from a bare circle (0%) into a
+   dash-filled bar (100%), with a percentage label + pin marker that
+   ride above the traveling edge — 1:1 from the determinate-2 Figma
+   frame (track/knob/label/pin dimensions and colors taken directly
+   from its layers). */
+.slider {
+  position: relative;
+  width: 298px;
+  height: 80px;
+}
+
+.track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 298px;
+  height: 27px;
+  background: #fff;
+  border-radius: 13.5px;
+}
+
+.fill {
+  position: absolute;
+  top: 3px;
+  left: 9px;
+  height: 21px;
+  width: 21px;
+  background: #d9d9d9;
+  border: 0.5px solid #000;
+  border-radius: 10.5px;
+  overflow: hidden;
+  transition: width 0.3s linear;
+}
+
+.dashes {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 3px;
+}
+
+.dashes svg {
+  flex-shrink: 0;
+}
+
+.marker {
+  position: absolute;
+  top: 0;
+  left: 19.5px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition: left 0.3s linear;
+}
+
+.marker-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  color: #000;
+}
+
+.marker-pin {
+  position: relative;
+  width: 15px;
+  height: 29px;
+}
+
+.pin-stem {
+  position: absolute;
+  top: 0;
+  left: 6.5px;
+}
+
+.pin-dot {
+  position: absolute;
+  top: 7px;
+  left: 0;
+}

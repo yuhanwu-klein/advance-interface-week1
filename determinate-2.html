@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Determinate Progress Indicator - 2</title>
+  <link rel="stylesheet" href="determinate-2.css">
+</head>
+<body>
+  <main>
+    <div class="slider" aria-label="Determinate Progress Indicator - 2">
+      <div class="marker" id="marker">
+        <div class="marker-label" id="label">0%</div>
+        <div class="marker-pin">
+          <svg class="pin-stem" width="2" height="29" viewBox="0 0 2 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L1 28" stroke="#FF874F" stroke-width="0.5"/>
+            <path d="M1 27L1.86603 28.5H0.133975L1 27Z" fill="#FF874F"/>
+            <path d="M1 2L0.133975 0.5H1.86603L1 2Z" fill="#FF874F"/>
+          </svg>
+          <svg class="pin-dot" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="7.5" cy="7.5" r="7" fill="black" stroke="black"/>
+            <circle cx="3.5" cy="6.5" r="0.5" fill="white"/>
+            <circle cx="6.5" cy="6.5" r="0.5" fill="white"/>
+          </svg>
+        </div>
+      </div>
+      <div class="track">
+        <div class="fill" id="fill">
+          <div class="dashes" id="dashes"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="determinate-2.js"></script>
+</body>
+</html>
