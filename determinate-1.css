@@ -21,7 +21,7 @@ main {
 
 .loading-text {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 4rem;
   font-weight: 700;
@@ -33,10 +33,16 @@ main {
   display: inline-block;
 }
 
-/* The "O" keeps its normal letterform; the percentage reel sits
-   inside its counter (the hole of the O) like a slot-machine window. */
+/* The "O" keeps its normal letterform. On each cycle it scales up
+   2.88x (measured from the Figma keyframes) before the percentage
+   reel appears inside its counter, then scales back down when done. */
 .letter-o {
   position: relative;
+  transition: font-size 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.letter-o.grown {
+  font-size: 2.88em;
 }
 
 .reel {
@@ -44,26 +50,32 @@ main {
   left: 50%;
   top: 48%;
   transform: translate(-50%, -50%);
-  width: 1.3rem;
-  height: 1.6rem;
+  width: 0.325em;
+  height: 0.4em;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease;
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 70%, transparent);
           mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 70%, transparent);
+}
+
+.letter-o.grown .reel {
+  opacity: 1;
 }
 
 .reel-track {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.08s linear;
+  font-size: 0.08em; /* base for .reel-item and this track's own translateY steps */
 }
 
 .reel-item {
-  height: 0.55rem;
+  /* 1.71875em of the inherited 0.08em = 0.1375em of the O's font-size */
+  height: 1.71875em;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.32rem;
   font-weight: 700;
   color: #fff;
 }
