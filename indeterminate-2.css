@@ -9,7 +9,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: radial-gradient(circle, #ffffff 0%, #eaf6f5 100%);
 }
 
 main {
@@ -17,8 +17,8 @@ main {
 }
 
 /* A cross-shaped cluster of glowing "circuit" tiles drifts diagonally
-   across a blank stage, looping — a blueprint/x-ray style stand-in
-   for continuous, indeterminate progress. */
+   across a blank stage, looping — a translucent x-ray/toy-render style
+   stand-in for continuous, indeterminate progress. */
 .stage {
   position: relative;
   width: 480px;
@@ -56,14 +56,23 @@ main {
 }
 
 .tile.corner {
-  background: rgba(59, 111, 176, 0.1);
-  border: 1px solid rgba(59, 111, 176, 0.3);
+  background: rgba(150, 222, 216, 0.18);
+  border: 1px solid rgba(110, 195, 188, 0.4);
+  backdrop-filter: blur(1px);
   transform: scale(0.7);
 }
 
+/* Translucent teal "plastic" — bright glassy highlight fading into a
+   soft tinted core, like backlit toy X-ray photography. */
 .tile.arm {
-  background: radial-gradient(circle at 50% 42%, #1c4f85 0%, #2f75bb 55%, rgba(47, 117, 187, 0.2) 100%);
-  box-shadow: 0 0 16px 2px rgba(47, 117, 187, 0.55);
+  background: radial-gradient(circle at 38% 32%,
+    rgba(232, 250, 248, 0.95) 0%,
+    rgba(140, 220, 213, 0.55) 40%,
+    rgba(45, 140, 132, 0.28) 75%,
+    rgba(45, 140, 132, 0.1) 100%);
+  border: 1px solid rgba(60, 160, 152, 0.35);
+  box-shadow: 0 0 22px 4px rgba(90, 200, 192, 0.5);
+  backdrop-filter: blur(0.5px);
 }
 
 .tile.arm::after {
@@ -71,17 +80,17 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 10px;
-  height: 10px;
-  background: #eaf3ff;
+  width: 9px;
+  height: 9px;
+  background: rgba(20, 45, 44, 0.8);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
 }
 
 .tile.core::after {
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
 }
 
 .links {
@@ -93,8 +102,15 @@ main {
   pointer-events: none;
 }
 
-.links line {
-  stroke: rgba(210, 230, 250, 0.85);
-  stroke-width: 2px;
+.links .wire {
+  fill: none;
+  stroke: rgba(25, 70, 66, 0.55);
+  stroke-width: 1.4px;
+  stroke-linecap: round;
   vector-effect: non-scaling-stroke;
+}
+
+.links .wire.thin {
+  stroke: rgba(25, 70, 66, 0.3);
+  stroke-width: 0.9px;
 }
