@@ -33,16 +33,20 @@ main {
   display: inline-block;
 }
 
-/* "O" replaced by a slot-machine style reel window that scrolls
-   through the percentage values like a spinning odometer. */
-.reel {
+/* The "O" keeps its normal letterform; the percentage reel sits
+   inside its counter (the hole of the O) like a slot-machine window. */
+.letter-o {
   position: relative;
-  width: 2.6rem;
-  height: 4.2rem;
+}
+
+.reel {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  width: 1.3rem;
+  height: 1.6rem;
   overflow: hidden;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  vertical-align: middle;
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 70%, transparent);
           mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 70%, transparent);
 }
@@ -51,20 +55,15 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.05s linear;
+  transition: transform 0.08s linear;
 }
 
 .reel-item {
-  height: 1.05rem;
+  height: 0.55rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
+  font-size: 0.32rem;
   font-weight: 700;
   color: #fff;
-}
-
-.reel-item--finished {
-  font-size: 0.6rem;
-  letter-spacing: 0.05em;
 }
