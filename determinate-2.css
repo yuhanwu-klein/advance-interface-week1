@@ -24,17 +24,18 @@ main {
 .slider {
   position: relative;
   width: 298px;
-  height: 80px;
+  height: 39px;
 }
 
 .track {
   position: absolute;
-  bottom: 0;
+  top: 11px;
   left: 0;
   width: 298px;
   height: 27px;
   background: #fff;
   border-radius: 13.5px;
+  z-index: 1;
 }
 
 .fill {
@@ -73,6 +74,7 @@ main {
   align-items: center;
   gap: 2px;
   transition: left 0.3s linear;
+  z-index: 2;
 }
 
 .marker-label {
