@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indeterminate Progress Indicator - 4</title>
+  <link rel="stylesheet" href="indeterminate-4.css">
+</head>
+<body>
+  <main>
+    <div class="ring-spinner" aria-label="Indeterminate Progress Indicator - 4">
+      <svg width="120" height="120" viewBox="0 0 120 120">
+        <circle class="track-ring" cx="60" cy="60" r="48" pathLength="100"></circle>
+        <g class="spin-group">
+          <circle class="active-arc" cx="60" cy="60" r="48" pathLength="100"></circle>
+          <g class="knob" transform="translate(57, 108)">
+            <circle cx="0" cy="0" r="7" fill="black" stroke="black"></circle>
+            <circle cx="-4" cy="-1" r="0.5" fill="white"></circle>
+            <circle cx="-1" cy="-1" r="0.5" fill="white"></circle>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </main>
+</body>
+</html>

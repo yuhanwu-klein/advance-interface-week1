@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5e5e5;
+}
+
+main {
+  display: flex;
+}
+
+/* Same color/marker language as the other Indeterminate/Determinate
+   indicators (orange accent, black pin knob with two white eyes) but
+   arranged as a spinning ring — continuous one-directional rotation
+   reads as "indeterminate" more clearly than a back-and-forth slide. */
+.ring-spinner {
+  width: 120px;
+  height: 120px;
+}
+
+.track-ring {
+  fill: none;
+  stroke: #d9d9d9;
+  stroke-width: 3;
+  stroke-dasharray: 1.2 2.5;
+  stroke-linecap: round;
+}
+
+.spin-group {
+  transform-origin: 60px 60px;
+  animation: spin 1.6s linear infinite;
+}
+
+.active-arc {
+  fill: none;
+  stroke: #FF874F;
+  stroke-width: 4;
+  stroke-dasharray: 26 74;
+  stroke-linecap: round;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
