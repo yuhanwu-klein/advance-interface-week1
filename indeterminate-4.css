@@ -19,7 +19,9 @@ main {
 /* Same color/marker language as the other Indeterminate/Determinate
    indicators (orange accent, black pin knob with two white eyes) but
    arranged as a spinning ring — continuous one-directional rotation
-   reads as "indeterminate" more clearly than a back-and-forth slide. */
+   reads as "indeterminate" more clearly than a back-and-forth slide.
+   The smiley ball itself sits still at the center and bounces in
+   place while the ring spins around it. */
 .ring-spinner {
   width: 120px;
   height: 120px;
@@ -49,5 +51,28 @@ main {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+.center-ball {
+  transform-origin: 60px 60px;
+  animation: ball-bounce 1.1s ease-in-out infinite;
+}
+
+@keyframes ball-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  20% {
+    transform: translateY(4px) scale(1.15, 0.85);
+  }
+  45% {
+    transform: translateY(-12px) scale(0.88, 1.18);
+  }
+  65% {
+    transform: translateY(3px) scale(1.06, 0.94);
+  }
+  85% {
+    transform: translateY(-2px) scale(0.98, 1.03);
   }
 }
