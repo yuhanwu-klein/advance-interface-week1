@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Same blurred pixel-grid material as Indeterminate Progress Indicator
+   - 2, but the fill is driven by an actual percentage instead of a
+   looping blob: cells behind the diagonal "front" are filled in, cells
+   ahead fade out over a short soft edge, and the blur softens that
+   edge into the same gentle look. */
+.stage {
+  position: relative;
+  width: 352px;
+  height: 352px;
+  overflow: hidden;
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 44px);
+  grid-template-rows: repeat(8, 44px);
+  filter: blur(3px);
+}
+
+.grid .cell {
+  width: 44px;
+  height: 44px;
+}
+
+.label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #666;
+}
